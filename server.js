@@ -8,7 +8,6 @@ require('dotenv').config();
 
 const apiRoutes         = require('./routes/api.js');
 const fccTestingRoutes  = require('./routes/fcctesting.js');
-const runner            = require('./test-runner');
 
 let app = express();
 
@@ -47,6 +46,7 @@ app.listen(port, '0.0.0.0', function () {
     console.log('Running Tests...');
     setTimeout(function () {
       try {
+        const runner = require('./test-runner');
         runner.run();
       } catch(e) {
           console.log('Tests are not valid:');

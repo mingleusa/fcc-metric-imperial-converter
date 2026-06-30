@@ -9,17 +9,21 @@
 	},
 	"dependencies": {
 		"body-parser": "^1.20.3",
-		"chai": "^4.5.0",
-		"chai-http": "^4.4.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.7",
-		"express": "^4.21.2",
+		"express": "^4.21.2"
+	},
+	"devDependencies": {
+		"chai": "^4.5.0",
+		"chai-http": "^4.4.0",
 		"mocha": "^11.7.6"
 	},
 	"overrides": {
 		"form-data": "^4.0.4",
 		"serialize-javascript": "^7.0.5",
-		"superagent": "^10.2.2"
+		"superagent": "^10.2.2",
+		"glob": "^13.0.6",
+		"diff": "^8.0.3"
 	},
 	"keywords": [
 		"node",
