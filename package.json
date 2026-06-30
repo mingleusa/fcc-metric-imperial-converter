@@ -14,10 +14,12 @@
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.7",
 		"express": "^4.21.2",
-		"mocha": "^10.8.2"
+		"mocha": "^11.7.6"
 	},
 	"overrides": {
-		"form-data": "^4.0.4"
+		"form-data": "^4.0.4",
+		"serialize-javascript": "^7.0.5",
+		"superagent": "^10.2.2"
 	},
 	"keywords": [
 		"node",
