@@ -2,12 +2,10 @@
 
 const express     = require('express');
 const bodyParser  = require('body-parser');
-const expect      = require('chai').expect;
 const cors        = require('cors');
 require('dotenv').config();
 
 const apiRoutes         = require('./routes/api.js');
-const fccTestingRoutes  = require('./routes/fcctesting.js');
 
 let app = express();
 
@@ -25,9 +23,14 @@ app.route('/')
   });
 
 //For FCC testing purposes
-fccTestingRoutes(app);
+try {
+  const fccTestingRoutes = require('./routes/fcctesting.js');
+  fccTestingRoutes(app);
+} catch (e) {
+  console.log('FCC testing routes unavailable in this environment');
+}
 
-//Routing for API 
+//Routing for API
 apiRoutes(app);  
     
 //404 Not Found Middleware
