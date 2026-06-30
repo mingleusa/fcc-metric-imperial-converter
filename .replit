@@ -2,11 +2,13 @@ entrypoint = "server.js"
 modules = ["nodejs-20"]
 
 run = "npm start"
+onBoot = "npm install"
 
-hidden = [".config", "package-lock.json"]
+hidden = [".config"]
 
 [env]
 NODE_ENV = "test"
+PORT = "3000"
 
 [nix]
 channel = "stable-24_05"
@@ -19,6 +21,9 @@ localPort = 3000
 externalPort = 80
 
 [deployment]
-build = ["npm", "install"]
-run = ["npm", "start"]
+build = "npm install"
+run = "npm start"
 deploymentTarget = "cloudrun"
+
+[deployment.env]
+NODE_ENV = "test"
