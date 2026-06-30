@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
 const port = process.env.PORT || 3000;
 
 //Start our server and tests!
-app.listen(port, function () {
+app.listen(port, '0.0.0.0', function () {
   console.log("Listening on port " + port);
   if(process.env.NODE_ENV==='test') {
     console.log('Running Tests...');
